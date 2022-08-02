@@ -2,11 +2,14 @@ import "./ViewStoryRoute.css";
 import { useContext } from "react";
 import StoriesContext from "../context/StoriesContext";
 import { useParams } from "react-router-dom";
+import Story from "../models/Story";
 
 const ViewStoryRoute = () => {
   const storyId: string | undefined = useParams().id;
   const { stories } = useContext(StoriesContext);
-  const story = stories.find((item) => item.id === parseInt(storyId!));
+  const story: Story | undefined = stories.find(
+    (item) => item.id === parseInt(storyId!)
+  );
 
   return (
     <div className="ViewStoryRoute">

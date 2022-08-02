@@ -10,7 +10,7 @@ const ListStoriesRoute = () => {
       <h2>Pick a Story</h2>
       <ul>
         {stories.map((story) => (
-          <li>
+          <li key={story.id}>
             <Link to={`/stories/${encodeURIComponent(story.id!)}`}>
               Mad Lib by {story.author}
             </Link>
